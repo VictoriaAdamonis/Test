@@ -1,0 +1,21 @@
+schemaVersion: "0.0.1"
+kind: "studio-config"
+session:
+    name: "studio-name"
+    description: "A studio description."
+    template:
+        kind: "registry"
+        registry: "cr.seqera.io/public/data-studio-vscode:1.93.1-snapshot"
+    computeRequirements:
+        awsBatch: # Ignored for non-batch CE
+            cpu: 2
+            gpu: 0
+            memory: 8192
+    environmentVariables:
+        -   name: "var1"
+            value: "value1"
+        -   name: "var2"
+            value: "value2"
+    management:
+        lifespanHours: 1 # Ignored if workspace lifespan is set
+        isPrivate: false # Defaults to false
